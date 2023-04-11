@@ -1,0 +1,5 @@
+D:\Projects\VS\Device\DeviceModel\bin\Debug\DeviceModel.dll
+D:\Projects\VS\Device\DeviceModel\bin\Debug\DeviceModel.pdb
+D:\Projects\VS\Device\DeviceModel\obj\Debug\DeviceModel.csproj.CoreCompileInputs.cache
+D:\Projects\VS\Device\DeviceModel\obj\Debug\DeviceModel.dll
+D:\Projects\VS\Device\DeviceModel\obj\Debug\DeviceModel.pdb

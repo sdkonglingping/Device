@@ -1,0 +1,14 @@
+D:\Projects\VS\Device\DeviceBLL\bin\Debug\Config.xml
+D:\Projects\VS\Device\DeviceBLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\Projects\VS\Device\DeviceBLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Projects\VS\Device\DeviceBLL\obj\Debug\BLL.csproj.CopyComplete
+D:\Projects\VS\Device\DeviceBLL\bin\Debug\BLL.dll
+D:\Projects\VS\Device\DeviceBLL\bin\Debug\BLL.pdb
+D:\Projects\VS\Device\DeviceBLL\bin\Debug\DAL.dll
+D:\Projects\VS\Device\DeviceBLL\bin\Debug\Model.dll
+D:\Projects\VS\Device\DeviceBLL\bin\Debug\DAL.pdb
+D:\Projects\VS\Device\DeviceBLL\bin\Debug\Model.pdb
+D:\Projects\VS\Device\DeviceBLL\obj\Debug\BLL.dll
+D:\Projects\VS\Device\DeviceBLL\obj\Debug\BLL.pdb
+D:\Projects\VS\Device\DeviceBLL\bin\Debug\Dapper.dll
+D:\Projects\VS\Device\DeviceBLL\bin\Debug\Dapper.xml

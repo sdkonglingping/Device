@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39944E50-A678-4533-AF7D-9ADFA8573248}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DeviceApp</RootNamespace>
+    <AssemblyName>DeviceApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlbumFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlbumFrm.Designer.cs">
+      <DependentUpon>AlbumFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportFrm.Designer.cs">
+      <DependentUpon>ImportFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevicePartRelative.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevicePartRelative.Designer.cs">
+      <DependentUpon>DevicePartRelative.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceSelectFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceSelectFrm.Designer.cs">
+      <DependentUpon>DeviceSelectFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceDetailFrm.Designer.cs">
+      <DependentUpon>DeviceDetailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceFrm.Designer.cs">
+      <DependentUpon>DeviceFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentFrm.Designer.cs">
+      <DependentUpon>DocumentFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceDealWithFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceDealWithFrm.Designer.cs">
+      <DependentUpon>MaintenanceDealWithFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceAddFrm.Designer.cs">
+      <DependentUpon>MaintenanceAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenancePlanEditFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenancePlanEditFrm.Designer.cs">
+      <DependentUpon>MaintenancePlanEditFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenancePlanFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenancePlanFrm.Designer.cs">
+      <DependentUpon>MaintenancePlanFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenancePlanDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenancePlanDetailFrm.Designer.cs">
+      <DependentUpon>MaintenancePlanDetailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartSelectFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartSelectFrm.Designer.cs">
+      <DependentUpon>PartSelectFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetupFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupFrm.Designer.cs">
+      <DependentUpon>SetupFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparePartDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparePartDetailFrm.Designer.cs">
+      <DependentUpon>SparePartDetailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetupFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSetupFrm.Designer.cs">
+      <DependentUpon>DataSetupFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="MasterFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterFrm.Designer.cs">
+      <DependentUpon>MasterFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceFrm.Designer.cs">
+      <DependentUpon>MaintenanceFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SparepartFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparepartFrm.Designer.cs">
+      <DependentUpon>SparepartFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolFrm.Designer.cs">
+      <DependentUpon>ToolFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AlbumFrm.resx">
+      <DependentUpon>AlbumFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportFrm.resx">
+      <DependentUpon>ImportFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevicePartRelative.resx">
+      <DependentUpon>DevicePartRelative.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceSelectFrm.resx">
+      <DependentUpon>DeviceSelectFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceDetailFrm.resx">
+      <DependentUpon>DeviceDetailFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceFrm.resx">
+      <DependentUpon>DeviceFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentFrm.resx">
+      <DependentUpon>DocumentFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceAddFrm.resx">
+      <DependentUpon>MaintenanceAddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceDealWithFrm.resx">
+      <DependentUpon>MaintenanceDealWithFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenancePlanEditFrm.resx">
+      <DependentUpon>MaintenancePlanEditFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceFrm.resx">
+      <DependentUpon>MaintenanceFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenancePlanFrm.resx">
+      <DependentUpon>MaintenancePlanFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenancePlanDetailFrm.resx">
+      <DependentUpon>MaintenancePlanDetailFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartSelectFrm.resx">
+      <DependentUpon>PartSelectFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupFrm.resx">
+      <DependentUpon>SetupFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparePartDetailFrm.resx">
+      <DependentUpon>SparePartDetailFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparepartFrm.resx">
+      <DependentUpon>SparepartFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataSetupFrm.resx">
+      <DependentUpon>DataSetupFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterFrm.resx">
+      <DependentUpon>MasterFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ToolFrm.resx">
+      <DependentUpon>ToolFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\DataSources\Model.Device.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{2a7cf1ec-7808-47ca-bf1a-45a9c98f2862}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DeviceBLL\BLL.csproj">
+      <Project>{b3cb9a42-37bf-4557-912b-7906f27dbebc}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DeviceModel\Model.csproj">
+      <Project>{251dcbeb-1de7-4932-aa1d-b82d916c1c98}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

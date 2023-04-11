@@ -1,0 +1,192 @@
+# SQLServer常用分页方式 
+
+　　mysql的分页是基于limit关键字，oracle的分页是基于rownum行号，SQLserver的分页在下面进行研究，是基于SQLServer2012进行的测试。
+
+### 0.原来的SQL的所有数据
+
+![img](https://img2018.cnblogs.com/blog/1196212/201901/1196212-20190122173210597-1786356044.png)
+
+ 
+
+下面的测试假设每页都是取5条数据。
+
+### 1.第一种-ROW_NUMBER() OVER()方式(over函数必须有)
+
+ (1)取第一页数据
+
+```
+  select * from ( 
+　　　　select *, ROW_NUMBER() OVER(Order by ID ) AS RowId from [mydb].[dbo].[user] 
+　　) as b
+
+      where RowId between 1 and 5;
+```
+
+ 结果:
+
+![img](https://img2018.cnblogs.com/blog/1196212/201901/1196212-20190122173501003-118172132.png)
+
+ 
+
+(2)取第二页数据
+
+```
+  select * from ( 
+　　　　select *, ROW_NUMBER() OVER(Order by ID ) AS RowId from [mydb].[dbo].[user] 
+　　) as b
+
+      where RowId between 6 and 10;
+```
+
+结果:
+
+![img](https://img2018.cnblogs.com/blog/1196212/201901/1196212-20190122173436473-1411683281.png)
+
+ 
+
+ **总结:　　这种方式采用  RowId BETWEEN 当前页数-1\*页大小+1 and 页数\*页大小  ，而且包含起始值与结束值。**
+
+ 
+
+**补充:这种方式的通用写法如下:  原来SQL不能带order by ，但是可以带条件。**
+
+**原来SQL =   select \* from [mydb].[dbo].[user] where name like 'name%'**  
+
+拼接分页的模板如下: 
+
+[![复制代码](https://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
+
+```
+ select * from ( 
+　　　　select *, ROW_NUMBER() OVER(Order by ID ) AS RowId from    (
+            原来SQL
+        ) AS A
+) as B
+where RowId between 1 and 5;
+```
+
+[![复制代码](https://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
+
+ 
+
+ 
+
+ 
+
+### 2.第二种-offset start fetch next page rows only
+
+(1)取第一页
+
+```
+select * from [mydb].[dbo].[user]   order by ID offset 0 rows fetch next 5 rows only;
+```
+
+结果:
+
+ ![img](https://img2018.cnblogs.com/blog/1196212/201901/1196212-20190122174104979-350668435.png)
+
+ 
+
+（2）取第二页
+
+```
+select * from [mydb].[dbo].[user]   order by ID offset 5 rows fetch next 5 rows only;
+```
+
+结果:
+
+![img](https://img2018.cnblogs.com/blog/1196212/201901/1196212-20190122174144715-882277498.png)
+
+ 
+
+ **总结:这种方式的起始值与结束值计算方式: offset 页号\*页大小 rows fetch next 页大小 rows only**　　
+
+ 
+
+### 3.第三种： top 关键字
+
+ (1)取第一页
+
+```
+select top 5 * from [mydb].[dbo].[user] 
+where ID not in (select top 0 ID from [mydb].[dbo].[user]);
+```
+
+结果：
+
+![img](https://img2018.cnblogs.com/blog/1196212/201901/1196212-20190122174859504-1423280554.png)
+
+ 
+
+(2)取第二页
+
+```
+select top 5 * from [mydb].[dbo].[user] 
+where ID not in (select top 5 ID from [mydb].[dbo].[user]);
+```
+
+结果：
+
+![img](https://img2018.cnblogs.com/blog/1196212/201901/1196212-20190122174942368-1419653901.png)
+
+ 
+
+　 **总结:这种方式只用改内层的 top就可以了: 内层的top后面相当于起始值，计算方式为 (页号-1)\*页大小。**
+
+ 补充:这种分页方式的通用模板如下: 这个可以加order by和条件
+
+原来SQL = select * from [mydb].[dbo].[user] where name like 'name%'  
+
+```
+select top 5 * from ( 
+    原来SQL
+) AS A where ID not in (select top 5 ID from [mydb].[dbo].[user]);
+```
+
+ 
+
+ 
+
+### **4.** ROW_NUMBER() + top 相当于上面1和3的结合使用
+
+ (1)取第一页
+
+```
+select top (5) * from (select *, ROW_NUMBER() OVER(Order by ID ) AS RowId from [mydb].[dbo].[user]) as A where A.RowId>0;
+```
+
+结果:
+
+![img](https://img2018.cnblogs.com/blog/1196212/201901/1196212-20190122175537333-79809773.png)
+
+(2)取第二页
+
+```
+select top (5) * from (select *, ROW_NUMBER() OVER(Order by ID ) AS RowId from [mydb].[dbo].[user]) as A where A.RowId>5;
+```
+
+结果:
+
+![img](https://img2018.cnblogs.com/blog/1196212/201901/1196212-20190122175611030-1520889319.png)
+
+ 
+
+　　**总结：这种方式比较通用， 第一个 top 里面的值 相当于 页大小，第二个rowID>起始值，起始值计算方式为 (页号-1）\*页大小**
+
+补充:这种分页方式的通用模板如下:   这种方式原来的SQL也不用加排序语句
+
+原来SQL = select * from [mydb].[dbo].[user] where name like 'name%'  
+
+```
+select top (5) * from (
+    select *, ROW_NUMBER() OVER(Order by ID ) AS RowId from (
+        原来SQL
+        ) as A   
+) as B where B.RowId>5;
+```
+
+ 
+
+ 
+
+注意:文中SQLServer的AS A这些起别名不能省略。

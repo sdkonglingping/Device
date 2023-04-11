@@ -1,0 +1,14 @@
+D:\Projects\VS\Device\DeviceDAL\bin\Debug\DeviceDAL.dll
+D:\Projects\VS\Device\DeviceDAL\bin\Debug\DeviceDAL.pdb
+D:\Projects\VS\Device\DeviceDAL\obj\Debug\DeviceDAL.csproj.AssemblyReference.cache
+D:\Projects\VS\Device\DeviceDAL\obj\Debug\DeviceDAL.csproj.CoreCompileInputs.cache
+D:\Projects\VS\Device\DeviceDAL\obj\Debug\DeviceDAL.dll
+D:\Projects\VS\Device\DeviceDAL\obj\Debug\DeviceDAL.pdb
+D:\Projects\VS\Device\DeviceDAL\bin\Debug\Dapper.dll
+D:\Projects\VS\Device\DeviceDAL\bin\Debug\Dapper.xml
+D:\Projects\VS\Device\DeviceDAL\obj\Debug\Interop.MSXML2.dll
+D:\Projects\VS\Device\DeviceDAL\obj\Debug\DeviceDAL.csproj.ResolveComReference.cache
+D:\Projects\VS\Device\DeviceDAL\obj\Debug\DeviceDAL.csproj.CopyComplete
+D:\Projects\VS\Device\DeviceDAL\bin\Debug\Config.xml
+D:\Projects\VS\Device\DeviceDAL\bin\Debug\DeviceModel.dll
+D:\Projects\VS\Device\DeviceDAL\bin\Debug\DeviceModel.pdb

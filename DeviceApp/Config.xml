@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<connectionStrings>
+		<ConnStr>"Data Source=.;Initial Catalog=OmidPayamak;Integrated Security=True" providerName="System.Data.SqlClient"</ConnStr>
+		<!--<ConnStr>"Data Source=.;Initial Catalog=OmidPayamak;Integrated Security=True" providerName="System.Data.SqlClient"</ConnStr>-->
+	</connectionStrings>
+</configuration>
