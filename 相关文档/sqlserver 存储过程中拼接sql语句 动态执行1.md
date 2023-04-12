@@ -52,7 +52,11 @@ ALTER PROC [dbo].[Student_Friend_Get]
 
 ​                        SET @sqlmain = ' '
 
-​                        SET @sqlmain = @sqlmain  +  ' SELECT * FROM                        (                            SELECT ROW_NUMBER() OVER(ORDER BY cjs.UserName) AS num,CTA.TrueName, u.UserName, c.ClassName + '' (''+ CAST(YEAR(c.GradeUpdateTime) AS NVARCHAR(20))+''年)'' AS [ClassName],s.SchoolName,cjs.ApplyTime,g.GradeName,cjs.ApplyID,c.ClassId,g.GradeId,s.SchoolId
+​                        SET @sqlmain = @sqlmain  +  ' SELECT * FROM
+
+​                        (
+
+​                            SELECT ROW_NUMBER() OVER(ORDER BY cjs.UserName) AS num,CTA.TrueName, u.UserName, c.ClassName + '' (''+ CAST(YEAR(c.GradeUpdateTime) AS NVARCHAR(20))+''年)'' AS [ClassName],s.SchoolName,cjs.ApplyTime,g.GradeName,cjs.ApplyID,c.ClassId,g.GradeId,s.SchoolId
 
 ​                                        FROM PE_C_StudentJoinClass AS cjs
 
