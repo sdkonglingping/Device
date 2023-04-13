@@ -39,3 +39,4 @@ D:\Projects\VS\Device\DeviceApp\bin\Debug\Common.dll
 D:\Projects\VS\Device\DeviceApp\bin\Debug\Common.pdb
 D:\Projects\VS\Device\DeviceApp\obj\Debug\DeviceApp.ImportFrm.resources
 D:\Projects\VS\Device\DeviceApp\obj\Debug\DeviceApp.SetupFrm.resources
+D:\Projects\VS\Device\DeviceApp\obj\Debug\DeviceApp.PartDetailFrm.resources

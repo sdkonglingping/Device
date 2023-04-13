@@ -49,6 +49,7 @@
     <Compile Include="DBHelper.cs" />
     <Compile Include="DeviceDAL.cs" />
     <Compile Include="IModel.cs" />
+    <Compile Include="PartDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

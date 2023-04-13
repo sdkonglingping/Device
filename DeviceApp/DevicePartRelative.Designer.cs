@@ -29,22 +29,25 @@ namespace DeviceApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnSelectDevice = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSelectPart = new System.Windows.Forms.Button();
+            this.deviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -67,16 +70,6 @@ namespace DeviceApp
             this.splitContainer1.SplitterDistance = 473;
             this.splitContainer1.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1421, 53);
-            this.panel1.TabIndex = 0;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -87,6 +80,37 @@ namespace DeviceApp
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1421, 420);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnSubmit);
+            this.panel1.Controls.Add(this.btnSelectDevice);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1421, 53);
+            this.panel1.TabIndex = 0;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSubmit.Location = new System.Drawing.Point(1328, 0);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(93, 53);
+            this.btnSubmit.TabIndex = 1;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            // 
+            // btnSelectDevice
+            // 
+            this.btnSelectDevice.AutoSize = true;
+            this.btnSelectDevice.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSelectDevice.Location = new System.Drawing.Point(0, 0);
+            this.btnSelectDevice.Name = "btnSelectDevice";
+            this.btnSelectDevice.Size = new System.Drawing.Size(117, 53);
+            this.btnSelectDevice.TabIndex = 0;
+            this.btnSelectDevice.Text = "Select Device";
+            this.btnSelectDevice.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -101,42 +125,27 @@ namespace DeviceApp
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.btnSelectPart);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1421, 53);
             this.panel2.TabIndex = 2;
             // 
-            // button1
+            // btnSelectPart
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 53);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "选择设备";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSelectPart.AutoSize = true;
+            this.btnSelectPart.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSelectPart.Location = new System.Drawing.Point(0, 0);
+            this.btnSelectPart.Name = "btnSelectPart";
+            this.btnSelectPart.Size = new System.Drawing.Size(129, 53);
+            this.btnSelectPart.TabIndex = 1;
+            this.btnSelectPart.Text = "Select Spare Part";
+            this.btnSelectPart.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // deviceBindingSource
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 53);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "选择备件";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button3.Location = new System.Drawing.Point(1328, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 53);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "确认关联";
-            this.button3.UseVisualStyleBackColor = true;
+            this.deviceBindingSource.DataSource = typeof(Model.Device);
             // 
             // DevicePartRelative
             // 
@@ -144,16 +153,23 @@ namespace DeviceApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1421, 725);
             this.Controls.Add(this.splitContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DevicePartRelative";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DevicePartRelative";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -163,10 +179,11 @@ namespace DeviceApp
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSelectDevice;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSelectPart;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.BindingSource deviceBindingSource;
     }
 }

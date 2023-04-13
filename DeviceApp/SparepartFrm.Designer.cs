@@ -29,44 +29,17 @@ namespace DeviceApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPart = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button38 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.btnPartDelete = new System.Windows.Forms.Button();
+            this.btnPartEdit = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
+            this.btnPartAdd = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -95,6 +68,24 @@ namespace DeviceApp
             this.panel9 = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPartName = new System.Windows.Forms.TextBox();
+            this.txtPartKKS = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtPartModel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.partBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pNameCNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pNameENDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pModelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lifecycleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pKKSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.providerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRemarkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -102,11 +93,8 @@ namespace DeviceApp
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -123,6 +111,8 @@ namespace DeviceApp
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.panel9.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.partBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -148,7 +138,7 @@ namespace DeviceApp
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer2.Panel1.Controls.Add(this.dgvPart);
             this.splitContainer2.Panel1.Controls.Add(this.panel3);
             this.splitContainer2.Panel1.Controls.Add(this.panel2);
             this.splitContainer2.Panel1.Controls.Add(this.panel1);
@@ -160,16 +150,32 @@ namespace DeviceApp
             this.splitContainer2.SplitterDistance = 357;
             this.splitContainer2.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvPart
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 154);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1711, 168);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvPart.AllowUserToAddRows = false;
+            this.dgvPart.AutoGenerateColumns = false;
+            this.dgvPart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pIdDataGridViewTextBoxColumn,
+            this.pNameCNDataGridViewTextBoxColumn,
+            this.pNameENDataGridViewTextBoxColumn,
+            this.pModelDataGridViewTextBoxColumn,
+            this.lifecycleDataGridViewTextBoxColumn,
+            this.pKKSDataGridViewTextBoxColumn,
+            this.manufacturerDataGridViewTextBoxColumn,
+            this.providerDataGridViewTextBoxColumn,
+            this.pRemarkDataGridViewTextBoxColumn});
+            this.dgvPart.DataSource = this.partBindingSource;
+            this.dgvPart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPart.Location = new System.Drawing.Point(0, 82);
+            this.dgvPart.MultiSelect = false;
+            this.dgvPart.Name = "dgvPart";
+            this.dgvPart.RowHeadersVisible = false;
+            this.dgvPart.RowHeadersWidth = 51;
+            this.dgvPart.RowTemplate.Height = 24;
+            this.dgvPart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPart.Size = new System.Drawing.Size(1711, 240);
+            this.dgvPart.TabIndex = 3;
             // 
             // panel3
             // 
@@ -181,48 +187,38 @@ namespace DeviceApp
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button38);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button15);
+            this.panel2.Controls.Add(this.btnPartDelete);
+            this.panel2.Controls.Add(this.btnPartEdit);
             this.panel2.Controls.Add(this.button11);
             this.panel2.Controls.Add(this.button10);
-            this.panel2.Controls.Add(this.button9);
-            this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.btnPartAdd);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 120);
+            this.panel2.Location = new System.Drawing.Point(0, 48);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1711, 34);
             this.panel2.TabIndex = 1;
             // 
-            // button38
+            // btnPartDelete
             // 
-            this.button38.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button38.Location = new System.Drawing.Point(300, 0);
-            this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(75, 34);
-            this.button38.TabIndex = 2;
-            this.button38.Text = "删除";
-            this.button38.UseVisualStyleBackColor = true;
+            this.btnPartDelete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPartDelete.Location = new System.Drawing.Point(150, 0);
+            this.btnPartDelete.Name = "btnPartDelete";
+            this.btnPartDelete.Size = new System.Drawing.Size(75, 34);
+            this.btnPartDelete.TabIndex = 1;
+            this.btnPartDelete.Text = "Delete";
+            this.btnPartDelete.UseVisualStyleBackColor = true;
+            this.btnPartDelete.Click += new System.EventHandler(this.btnPartDelete_Click);
             // 
-            // button1
+            // btnPartEdit
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Location = new System.Drawing.Point(225, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "更新库存";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button15.Location = new System.Drawing.Point(150, 0);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 34);
-            this.button15.TabIndex = 0;
-            this.button15.Text = "添加出库";
-            this.button15.UseVisualStyleBackColor = true;
+            this.btnPartEdit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPartEdit.Location = new System.Drawing.Point(75, 0);
+            this.btnPartEdit.Name = "btnPartEdit";
+            this.btnPartEdit.Size = new System.Drawing.Size(75, 34);
+            this.btnPartEdit.TabIndex = 0;
+            this.btnPartEdit.Text = "Edit";
+            this.btnPartEdit.UseVisualStyleBackColor = true;
+            this.btnPartEdit.Click += new System.EventHandler(this.btnPartEdit_Click);
             // 
             // button11
             // 
@@ -244,277 +240,16 @@ namespace DeviceApp
             this.button10.Text = "导出";
             this.button10.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnPartAdd
             // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button9.Location = new System.Drawing.Point(75, 0);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 34);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "添加入库";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button8.Location = new System.Drawing.Point(0, 0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 34);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "添加备件";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1711, 120);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.comboBox4);
-            this.panel5.Controls.Add(this.comboBox3);
-            this.panel5.Controls.Add(this.comboBox2);
-            this.panel5.Controls.Add(this.textBox5);
-            this.panel5.Controls.Add(this.button7);
-            this.panel5.Controls.Add(this.button6);
-            this.panel5.Controls.Add(this.button5);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.textBox3);
-            this.panel5.Controls.Add(this.textBox2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 42);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1711, 78);
-            this.panel5.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(657, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "规格型号";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(428, 49);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(234, 24);
-            this.comboBox4.TabIndex = 1;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "入库",
-            "出库"});
-            this.comboBox3.Location = new System.Drawing.Point(770, 51);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(146, 24);
-            this.comboBox3.TabIndex = 1;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(96, 46);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(234, 24);
-            this.comboBox2.TabIndex = 1;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(742, 18);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(222, 22);
-            this.textBox5.TabIndex = 3;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(1189, 52);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(81, 23);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "关闭";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(1093, 52);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(81, 23);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "确认";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(1019, 52);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(68, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "清空";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(332, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "备件编号";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(346, 49);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 17);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "供应商";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(688, 51);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 17);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "出入库类型";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 46);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 17);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "生产厂商";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "备件名称";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(417, 18);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(222, 22);
-            this.textBox3.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(96, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 22);
-            this.textBox2.TabIndex = 3;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.comboBox5);
-            this.panel4.Controls.Add(this.comboBox1);
-            this.panel4.Controls.Add(this.button4);
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1711, 42);
-            this.panel4.TabIndex = 4;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(785, 14);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(64, 17);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "快速查询";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "仓库";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "全部",
-            "库存不足",
-            "库存过量"});
-            this.comboBox5.Location = new System.Drawing.Point(402, 15);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(173, 24);
-            this.comboBox5.TabIndex = 1;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(84, 11);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(234, 24);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(1229, 11);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "更多";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1082, 9);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(141, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "重置";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(935, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "搜索";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(332, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 17);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "库存预警";
+            this.btnPartAdd.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPartAdd.Location = new System.Drawing.Point(0, 0);
+            this.btnPartAdd.Name = "btnPartAdd";
+            this.btnPartAdd.Size = new System.Drawing.Size(75, 34);
+            this.btnPartAdd.TabIndex = 0;
+            this.btnPartAdd.Text = "Add";
+            this.btnPartAdd.UseVisualStyleBackColor = true;
+            this.btnPartAdd.Click += new System.EventHandler(this.btnPartAdd_Click);
             // 
             // tabControl1
             // 
@@ -815,6 +550,154 @@ namespace DeviceApp
             this.button12.Text = "添加关联";
             this.button12.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(292, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "KKS";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Name";
+            // 
+            // txtPartName
+            // 
+            this.txtPartName.Location = new System.Drawing.Point(80, 8);
+            this.txtPartName.Name = "txtPartName";
+            this.txtPartName.Size = new System.Drawing.Size(189, 22);
+            this.txtPartName.TabIndex = 3;
+            // 
+            // txtPartKKS
+            // 
+            this.txtPartKKS.Location = new System.Drawing.Point(362, 8);
+            this.txtPartKKS.Name = "txtPartKKS";
+            this.txtPartKKS.Size = new System.Drawing.Size(175, 22);
+            this.txtPartKKS.TabIndex = 3;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(632, 7);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(222, 22);
+            this.textBox5.TabIndex = 3;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(875, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(89, 35);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtPartModel
+            // 
+            this.txtPartModel.AutoSize = true;
+            this.txtPartModel.Location = new System.Drawing.Point(562, 11);
+            this.txtPartModel.Name = "txtPartModel";
+            this.txtPartModel.Size = new System.Drawing.Size(46, 17);
+            this.txtPartModel.TabIndex = 0;
+            this.txtPartModel.Text = "Model";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtPartModel);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.txtPartName);
+            this.panel1.Controls.Add(this.txtPartKKS);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1711, 48);
+            this.panel1.TabIndex = 0;
+            // 
+            // partBindingSource
+            // 
+            this.partBindingSource.DataSource = typeof(Model.Part);
+            // 
+            // pIdDataGridViewTextBoxColumn
+            // 
+            this.pIdDataGridViewTextBoxColumn.DataPropertyName = "PId";
+            this.pIdDataGridViewTextBoxColumn.HeaderText = "PId";
+            this.pIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pIdDataGridViewTextBoxColumn.Name = "pIdDataGridViewTextBoxColumn";
+            this.pIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pNameCNDataGridViewTextBoxColumn
+            // 
+            this.pNameCNDataGridViewTextBoxColumn.DataPropertyName = "PNameCN";
+            this.pNameCNDataGridViewTextBoxColumn.HeaderText = "PNameCN";
+            this.pNameCNDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pNameCNDataGridViewTextBoxColumn.Name = "pNameCNDataGridViewTextBoxColumn";
+            this.pNameCNDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pNameENDataGridViewTextBoxColumn
+            // 
+            this.pNameENDataGridViewTextBoxColumn.DataPropertyName = "PNameEN";
+            this.pNameENDataGridViewTextBoxColumn.HeaderText = "PNameEN";
+            this.pNameENDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pNameENDataGridViewTextBoxColumn.Name = "pNameENDataGridViewTextBoxColumn";
+            this.pNameENDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pModelDataGridViewTextBoxColumn
+            // 
+            this.pModelDataGridViewTextBoxColumn.DataPropertyName = "PModel";
+            this.pModelDataGridViewTextBoxColumn.HeaderText = "PModel";
+            this.pModelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pModelDataGridViewTextBoxColumn.Name = "pModelDataGridViewTextBoxColumn";
+            this.pModelDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // lifecycleDataGridViewTextBoxColumn
+            // 
+            this.lifecycleDataGridViewTextBoxColumn.DataPropertyName = "Lifecycle";
+            this.lifecycleDataGridViewTextBoxColumn.HeaderText = "Lifecycle";
+            this.lifecycleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lifecycleDataGridViewTextBoxColumn.Name = "lifecycleDataGridViewTextBoxColumn";
+            this.lifecycleDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pKKSDataGridViewTextBoxColumn
+            // 
+            this.pKKSDataGridViewTextBoxColumn.DataPropertyName = "PKKS";
+            this.pKKSDataGridViewTextBoxColumn.HeaderText = "PKKS";
+            this.pKKSDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pKKSDataGridViewTextBoxColumn.Name = "pKKSDataGridViewTextBoxColumn";
+            this.pKKSDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // manufacturerDataGridViewTextBoxColumn
+            // 
+            this.manufacturerDataGridViewTextBoxColumn.DataPropertyName = "Manufacturer";
+            this.manufacturerDataGridViewTextBoxColumn.HeaderText = "Manufacturer";
+            this.manufacturerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.manufacturerDataGridViewTextBoxColumn.Name = "manufacturerDataGridViewTextBoxColumn";
+            this.manufacturerDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // providerDataGridViewTextBoxColumn
+            // 
+            this.providerDataGridViewTextBoxColumn.DataPropertyName = "Provider";
+            this.providerDataGridViewTextBoxColumn.HeaderText = "Provider";
+            this.providerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.providerDataGridViewTextBoxColumn.Name = "providerDataGridViewTextBoxColumn";
+            this.providerDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pRemarkDataGridViewTextBoxColumn
+            // 
+            this.pRemarkDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pRemarkDataGridViewTextBoxColumn.DataPropertyName = "PRemark";
+            this.pRemarkDataGridViewTextBoxColumn.HeaderText = "PRemark";
+            this.pRemarkDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pRemarkDataGridViewTextBoxColumn.Name = "pRemarkDataGridViewTextBoxColumn";
+            // 
             // SparepartFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -824,6 +707,7 @@ namespace DeviceApp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SparepartFrm";
             this.Text = "SparepartFrm";
+            this.Load += new System.EventHandler(this.SparepartFrm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -831,13 +715,8 @@ namespace DeviceApp
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPart)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -854,6 +733,9 @@ namespace DeviceApp
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.panel9.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.partBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -862,42 +744,14 @@ namespace DeviceApp
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPart;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button38;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button btnPartDelete;
+        private System.Windows.Forms.Button btnPartEdit;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnPartAdd;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -926,5 +780,23 @@ namespace DeviceApp
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.BindingSource partBindingSource;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label txtPartModel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtPartName;
+        private System.Windows.Forms.TextBox txtPartKKS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pNameCNDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pNameENDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pModelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lifecycleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pKKSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn manufacturerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn providerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRemarkDataGridViewTextBoxColumn;
     }
 }

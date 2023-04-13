@@ -602,6 +602,7 @@ namespace DeviceApp
             this.Controls.Add(this.pnlDeviceStatus);
             this.Controls.Add(this.pnlDevice);
             this.Controls.Add(this.pnlDeviceInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DeviceDetailFrm";

@@ -128,7 +128,7 @@ namespace DeviceApp
             this.图片管理ToolStripMenuItem});
             this.mns.Location = new System.Drawing.Point(0, 0);
             this.mns.Name = "mns";
-            this.mns.Size = new System.Drawing.Size(1408, 30);
+            this.mns.Size = new System.Drawing.Size(1408, 28);
             this.mns.TabIndex = 1;
             this.mns.Text = "menuStrip1";
             // 
@@ -240,26 +240,26 @@ namespace DeviceApp
             // 配件列表ToolStripMenuItem
             // 
             this.配件列表ToolStripMenuItem.Name = "配件列表ToolStripMenuItem";
-            this.配件列表ToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.配件列表ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.配件列表ToolStripMenuItem.Text = "Spare Parts List";
             this.配件列表ToolStripMenuItem.Click += new System.EventHandler(this.配件列表ToolStripMenuItem_Click);
             // 
             // 配件添加ToolStripMenuItem
             // 
             this.配件添加ToolStripMenuItem.Name = "配件添加ToolStripMenuItem";
-            this.配件添加ToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.配件添加ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.配件添加ToolStripMenuItem.Text = "Add";
             // 
             // 配件类别ToolStripMenuItem
             // 
             this.配件类别ToolStripMenuItem.Name = "配件类别ToolStripMenuItem";
-            this.配件类别ToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.配件类别ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.配件类别ToolStripMenuItem.Text = "Parts Type";
             // 
             // 配件状态ToolStripMenuItem
             // 
             this.配件状态ToolStripMenuItem.Name = "配件状态ToolStripMenuItem";
-            this.配件状态ToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.配件状态ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.配件状态ToolStripMenuItem.Text = "Parts Status";
             // 
             // 维护管理ToolStripMenuItem
@@ -403,13 +403,13 @@ namespace DeviceApp
             // 
             this.spl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.spl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spl.Location = new System.Drawing.Point(0, 30);
+            this.spl.Location = new System.Drawing.Point(0, 28);
             this.spl.Name = "spl";
             // 
             // spl.Panel2
             // 
             this.spl.Panel2.Controls.Add(this.pnlMain);
-            this.spl.Size = new System.Drawing.Size(1408, 801);
+            this.spl.Size = new System.Drawing.Size(1408, 803);
             this.spl.SplitterDistance = 219;
             this.spl.TabIndex = 2;
             // 
@@ -422,7 +422,7 @@ namespace DeviceApp
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1183, 799);
+            this.pnlMain.Size = new System.Drawing.Size(1183, 801);
             this.pnlMain.TabIndex = 0;
             // 
             // grpMainte

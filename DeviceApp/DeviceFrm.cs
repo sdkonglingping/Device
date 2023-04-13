@@ -74,5 +74,16 @@ namespace DeviceApp
             }
             objState = EntityState.Unchanged;
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPartsRelativeSelect_Click(object sender, EventArgs e)
+        {
+            DevicePartRelative dpFrm = new DevicePartRelative();
+            dpFrm.ShowDialog();
+        }
     }
 }

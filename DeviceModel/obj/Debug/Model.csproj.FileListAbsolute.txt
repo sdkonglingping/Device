@@ -3,4 +3,3 @@ D:\Projects\VS\Device\DeviceModel\bin\Debug\Model.dll
 D:\Projects\VS\Device\DeviceModel\bin\Debug\Model.pdb
 D:\Projects\VS\Device\DeviceModel\obj\Debug\Model.dll
 D:\Projects\VS\Device\DeviceModel\obj\Debug\Model.pdb
-D:\Projects\VS\Device\DeviceModel\obj\Debug\Model.csproj.AssemblyReference.cache

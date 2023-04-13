@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Device.cs" />
     <Compile Include="EntityState.cs" />
+    <Compile Include="Part.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

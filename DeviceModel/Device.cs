@@ -17,6 +17,7 @@ namespace Model
         public string DKKS { get; set; }
         public string DArea { get; set; }
         public string DStatus { get; set; }
+        public string Dept { get; set; }
         public string StartDate { get; set; }
         public string Manufacturer { get; set; }
         public string Provider { get; set; }

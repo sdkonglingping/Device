@@ -46,6 +46,16 @@ namespace DeviceApp
             this.DRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlDevicePage = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbNums = new System.Windows.Forms.ComboBox();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnGo = new System.Windows.Forms.Button();
+            this.btnPre = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
+            this.txtPage = new System.Windows.Forms.TextBox();
+            this.lblPages = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlDeviceList = new System.Windows.Forms.Panel();
             this.btnDeviceDel = new System.Windows.Forms.Button();
             this.btnDeviceImport = new System.Windows.Forms.Button();
@@ -53,6 +63,8 @@ namespace DeviceApp
             this.btnDeviceEdit = new System.Windows.Forms.Button();
             this.btnDeviceAdd = new System.Windows.Forms.Button();
             this.pnlSearch = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.lblModel = new System.Windows.Forms.Label();
             this.lblArea = new System.Windows.Forms.Label();
@@ -133,16 +145,6 @@ namespace DeviceApp
             this.btnMaiteListExport = new System.Windows.Forms.Button();
             this.btnMaiteListAdd = new System.Windows.Forms.Button();
             this.dataGridView10 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPage = new System.Windows.Forms.TextBox();
-            this.btnFirst = new System.Windows.Forms.Button();
-            this.btnPre = new System.Windows.Forms.Button();
-            this.btnGo = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnLast = new System.Windows.Forms.Button();
-            this.lblPages = new System.Windows.Forms.Label();
-            this.cmbNums = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -353,6 +355,93 @@ namespace DeviceApp
             this.pnlDevicePage.Size = new System.Drawing.Size(1413, 35);
             this.pnlDevicePage.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(76, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Per page";
+            // 
+            // cmbNums
+            // 
+            this.cmbNums.FormattingEnabled = true;
+            this.cmbNums.Location = new System.Drawing.Point(3, 5);
+            this.cmbNums.Name = "cmbNums";
+            this.cmbNums.Size = new System.Drawing.Size(67, 24);
+            this.cmbNums.TabIndex = 3;
+            // 
+            // btnLast
+            // 
+            this.btnLast.Location = new System.Drawing.Point(537, 6);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(47, 23);
+            this.btnLast.TabIndex = 2;
+            this.btnLast.Text = ">>";
+            this.btnLast.UseVisualStyleBackColor = true;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(482, 6);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(47, 23);
+            this.btnNext.TabIndex = 2;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = true;
+            // 
+            // btnGo
+            // 
+            this.btnGo.Location = new System.Drawing.Point(427, 6);
+            this.btnGo.Name = "btnGo";
+            this.btnGo.Size = new System.Drawing.Size(47, 23);
+            this.btnGo.TabIndex = 2;
+            this.btnGo.Text = "Go";
+            this.btnGo.UseVisualStyleBackColor = true;
+            // 
+            // btnPre
+            // 
+            this.btnPre.Location = new System.Drawing.Point(263, 6);
+            this.btnPre.Name = "btnPre";
+            this.btnPre.Size = new System.Drawing.Size(47, 23);
+            this.btnPre.TabIndex = 2;
+            this.btnPre.Text = "<";
+            this.btnPre.UseVisualStyleBackColor = true;
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.Location = new System.Drawing.Point(208, 6);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(47, 23);
+            this.btnFirst.TabIndex = 2;
+            this.btnFirst.Text = "<<";
+            this.btnFirst.UseVisualStyleBackColor = true;
+            // 
+            // txtPage
+            // 
+            this.txtPage.Location = new System.Drawing.Point(318, 6);
+            this.txtPage.Name = "txtPage";
+            this.txtPage.Size = new System.Drawing.Size(57, 22);
+            this.txtPage.TabIndex = 1;
+            // 
+            // lblPages
+            // 
+            this.lblPages.AutoSize = true;
+            this.lblPages.Location = new System.Drawing.Point(403, 9);
+            this.lblPages.Name = "lblPages";
+            this.lblPages.Size = new System.Drawing.Size(16, 17);
+            this.lblPages.TabIndex = 0;
+            this.lblPages.Text = "?";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(383, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(12, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "/";
+            // 
             // pnlDeviceList
             // 
             this.pnlDeviceList.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -423,6 +512,8 @@ namespace DeviceApp
             // 
             // pnlSearch
             // 
+            this.pnlSearch.Controls.Add(this.label2);
+            this.pnlSearch.Controls.Add(this.comboBox1);
             this.pnlSearch.Controls.Add(this.cmbStatus);
             this.pnlSearch.Controls.Add(this.lblModel);
             this.pnlSearch.Controls.Add(this.lblArea);
@@ -440,6 +531,27 @@ namespace DeviceApp
             this.pnlSearch.Size = new System.Drawing.Size(1413, 42);
             this.pnlSearch.TabIndex = 5;
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 17);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Dept.";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(51, 9);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(137, 24);
+            this.comboBox1.TabIndex = 23;
+            // 
             // cmbStatus
             // 
             this.cmbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -455,7 +567,7 @@ namespace DeviceApp
             this.lblModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblModel.AutoSize = true;
-            this.lblModel.Location = new System.Drawing.Point(567, 13);
+            this.lblModel.Location = new System.Drawing.Point(672, 13);
             this.lblModel.Name = "lblModel";
             this.lblModel.Size = new System.Drawing.Size(46, 17);
             this.lblModel.TabIndex = 5;
@@ -466,7 +578,7 @@ namespace DeviceApp
             this.lblArea.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblArea.AutoSize = true;
-            this.lblArea.Location = new System.Drawing.Point(8, 13);
+            this.lblArea.Location = new System.Drawing.Point(217, 13);
             this.lblArea.Name = "lblArea";
             this.lblArea.Size = new System.Drawing.Size(38, 17);
             this.lblArea.TabIndex = 0;
@@ -477,16 +589,16 @@ namespace DeviceApp
             this.cmbArea.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.cmbArea.FormattingEnabled = true;
-            this.cmbArea.Location = new System.Drawing.Point(52, 9);
+            this.cmbArea.Location = new System.Drawing.Point(263, 9);
             this.cmbArea.Name = "cmbArea";
-            this.cmbArea.Size = new System.Drawing.Size(220, 24);
+            this.cmbArea.Size = new System.Drawing.Size(152, 24);
             this.cmbArea.TabIndex = 1;
             // 
             // txtModel
             // 
             this.txtModel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtModel.Location = new System.Drawing.Point(619, 10);
+            this.txtModel.Location = new System.Drawing.Point(724, 10);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(170, 22);
             this.txtModel.TabIndex = 19;
@@ -513,13 +625,14 @@ namespace DeviceApp
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lblKKS
             // 
             this.lblKKS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblKKS.AutoSize = true;
-            this.lblKKS.Location = new System.Drawing.Point(806, 13);
+            this.lblKKS.Location = new System.Drawing.Point(911, 13);
             this.lblKKS.Name = "lblKKS";
             this.lblKKS.Size = new System.Drawing.Size(35, 17);
             this.lblKKS.TabIndex = 7;
@@ -530,7 +643,7 @@ namespace DeviceApp
             this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(289, 13);
+            this.lblName.Location = new System.Drawing.Point(424, 13);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(45, 17);
             this.lblName.TabIndex = 11;
@@ -540,7 +653,7 @@ namespace DeviceApp
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtName.Location = new System.Drawing.Point(340, 10);
+            this.txtName.Location = new System.Drawing.Point(475, 10);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(196, 22);
             this.txtName.TabIndex = 18;
@@ -549,9 +662,9 @@ namespace DeviceApp
             // 
             this.txtKKS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtKKS.Location = new System.Drawing.Point(856, 10);
+            this.txtKKS.Location = new System.Drawing.Point(952, 10);
             this.txtKKS.Name = "txtKKS";
-            this.txtKKS.Size = new System.Drawing.Size(220, 22);
+            this.txtKKS.Size = new System.Drawing.Size(149, 22);
             this.txtKKS.TabIndex = 21;
             // 
             // tabControl1
@@ -1076,6 +1189,7 @@ namespace DeviceApp
             this.btnPartsRelativeSelect.TabIndex = 0;
             this.btnPartsRelativeSelect.Text = "Select Part";
             this.btnPartsRelativeSelect.UseVisualStyleBackColor = true;
+            this.btnPartsRelativeSelect.Click += new System.EventHandler(this.btnPartsRelativeSelect_Click);
             // 
             // dataGridView8
             // 
@@ -1322,93 +1436,6 @@ namespace DeviceApp
             this.dataGridView10.Size = new System.Drawing.Size(1405, 248);
             this.dataGridView10.TabIndex = 11;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(383, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(12, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "/";
-            // 
-            // txtPage
-            // 
-            this.txtPage.Location = new System.Drawing.Point(318, 6);
-            this.txtPage.Name = "txtPage";
-            this.txtPage.Size = new System.Drawing.Size(57, 22);
-            this.txtPage.TabIndex = 1;
-            // 
-            // btnFirst
-            // 
-            this.btnFirst.Location = new System.Drawing.Point(208, 6);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(47, 23);
-            this.btnFirst.TabIndex = 2;
-            this.btnFirst.Text = "<<";
-            this.btnFirst.UseVisualStyleBackColor = true;
-            // 
-            // btnPre
-            // 
-            this.btnPre.Location = new System.Drawing.Point(263, 6);
-            this.btnPre.Name = "btnPre";
-            this.btnPre.Size = new System.Drawing.Size(47, 23);
-            this.btnPre.TabIndex = 2;
-            this.btnPre.Text = "<";
-            this.btnPre.UseVisualStyleBackColor = true;
-            // 
-            // btnGo
-            // 
-            this.btnGo.Location = new System.Drawing.Point(427, 6);
-            this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(47, 23);
-            this.btnGo.TabIndex = 2;
-            this.btnGo.Text = "Go";
-            this.btnGo.UseVisualStyleBackColor = true;
-            // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(482, 6);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(47, 23);
-            this.btnNext.TabIndex = 2;
-            this.btnNext.Text = ">";
-            this.btnNext.UseVisualStyleBackColor = true;
-            // 
-            // btnLast
-            // 
-            this.btnLast.Location = new System.Drawing.Point(537, 6);
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(47, 23);
-            this.btnLast.TabIndex = 2;
-            this.btnLast.Text = ">>";
-            this.btnLast.UseVisualStyleBackColor = true;
-            // 
-            // lblPages
-            // 
-            this.lblPages.AutoSize = true;
-            this.lblPages.Location = new System.Drawing.Point(403, 9);
-            this.lblPages.Name = "lblPages";
-            this.lblPages.Size = new System.Drawing.Size(16, 17);
-            this.lblPages.TabIndex = 0;
-            this.lblPages.Text = "?";
-            // 
-            // cmbNums
-            // 
-            this.cmbNums.FormattingEnabled = true;
-            this.cmbNums.Location = new System.Drawing.Point(3, 5);
-            this.cmbNums.Name = "cmbNums";
-            this.cmbNums.Size = new System.Drawing.Size(67, 24);
-            this.cmbNums.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Per page";
-            // 
             // DeviceFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1587,5 +1614,7 @@ namespace DeviceApp
         private System.Windows.Forms.TextBox txtPage;
         private System.Windows.Forms.Label lblPages;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

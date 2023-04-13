@@ -119,6 +119,12 @@
     <Compile Include="MaintenancePlanDetailFrm.Designer.cs">
       <DependentUpon>MaintenancePlanDetailFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PartDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartDetailFrm.Designer.cs">
+      <DependentUpon>PartDetailFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PartSelectFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     <EmbeddedResource Include="MaintenancePlanDetailFrm.resx">
       <DependentUpon>MaintenancePlanDetailFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PartDetailFrm.resx">
+      <DependentUpon>PartDetailFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PartSelectFrm.resx">
       <DependentUpon>PartSelectFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +250,7 @@
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\DataSources\Model.Device.datasource" />
+    <None Include="Properties\DataSources\Model.Part.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
