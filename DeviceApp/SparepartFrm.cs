@@ -16,6 +16,7 @@ namespace DeviceApp
     {
         PartBLL partBLL = new PartBLL();
         EntityState objState;
+        string[] filter;
         public SparepartFrm()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace DeviceApp
 
         private void SparepartFrm_Load(object sender, EventArgs e)
         {
-            partBindingSource.DataSource = partBLL.GetAll() ;
+            partBindingSource.DataSource = partBLL.GetAll(filter) ;
         }
         private void ReFreshForm()
         {

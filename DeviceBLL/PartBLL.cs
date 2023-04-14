@@ -11,9 +11,9 @@ namespace BLL
     public class PartBLL
     {
         PartDAL partDAL = new PartDAL();
-        public List<Part> GetAll()
+        public List<Part> GetAll(string[] filter)
         {
-            return partDAL.GetAll();
+            return partDAL.GetAll(filter);
         }
         public List<Part> GetDataByFilter(string filter)
         {

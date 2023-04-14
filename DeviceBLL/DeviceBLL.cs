@@ -10,9 +10,9 @@ namespace BLL
     public class DeviceBLL
     {
         DeviceDAL deviceDAL = new DeviceDAL();
-        public List<Device> GetAll()
+        public List<Device> GetAll(string[] filter)
         {
-            return deviceDAL.GetAll();
+            return deviceDAL.GetAll(filter);
         }
         public List<Device> GetDataByFilter(string filter)
         {

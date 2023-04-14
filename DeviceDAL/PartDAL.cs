@@ -38,7 +38,7 @@ namespace DAL
             }
         }
 
-        public List<Part> GetAll()
+        public List<Part> GetAll(string[] filter)
         {
             using (IDbConnection db = new SqlConnection(DBHelper.ConnectionString))//"server=.;database=DeviceDB;uid=sa;pwd=123"
             {

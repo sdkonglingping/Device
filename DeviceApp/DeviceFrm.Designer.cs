@@ -32,6 +32,7 @@ namespace DeviceApp
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvDeviceList = new System.Windows.Forms.DataGridView();
+            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNameEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNameCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,16 +48,17 @@ namespace DeviceApp
             this.deviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlDevicePage = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbNums = new System.Windows.Forms.ComboBox();
+            this.cmbQty = new System.Windows.Forms.ComboBox();
             this.btnLast = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnGo = new System.Windows.Forms.Button();
             this.btnPre = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
-            this.txtPage = new System.Windows.Forms.TextBox();
+            this.txtCurrentPage = new System.Windows.Forms.TextBox();
             this.lblPages = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pnlDeviceList = new System.Windows.Forms.Panel();
+            this.chkMulti = new System.Windows.Forms.CheckBox();
             this.btnDeviceDel = new System.Windows.Forms.Button();
             this.btnDeviceImport = new System.Windows.Forms.Button();
             this.btnDeviceEXport = new System.Windows.Forms.Button();
@@ -64,7 +66,7 @@ namespace DeviceApp
             this.btnDeviceAdd = new System.Windows.Forms.Button();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbDept = new System.Windows.Forms.ComboBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.lblModel = new System.Windows.Forms.Label();
             this.lblArea = new System.Windows.Forms.Label();
@@ -212,6 +214,7 @@ namespace DeviceApp
             this.dgvDeviceList.AutoGenerateColumns = false;
             this.dgvDeviceList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeviceList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Select,
             this.DId,
             this.DNameEN,
             this.DNameCN,
@@ -236,6 +239,13 @@ namespace DeviceApp
             this.dgvDeviceList.Size = new System.Drawing.Size(1413, 360);
             this.dgvDeviceList.TabIndex = 3;
             // 
+            // Select
+            // 
+            this.Select.HeaderText = "Select";
+            this.Select.MinimumWidth = 6;
+            this.Select.Name = "Select";
+            this.Select.Width = 53;
+            // 
             // DId
             // 
             this.DId.DataPropertyName = "DId";
@@ -246,43 +256,48 @@ namespace DeviceApp
             // 
             // DNameEN
             // 
+            this.DNameEN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.DNameEN.DataPropertyName = "DNameEN";
             this.DNameEN.HeaderText = "DNameEN";
             this.DNameEN.MinimumWidth = 6;
             this.DNameEN.Name = "DNameEN";
-            this.DNameEN.Width = 125;
+            this.DNameEN.Width = 103;
             // 
             // DNameCN
             // 
+            this.DNameCN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.DNameCN.DataPropertyName = "DNameCN";
             this.DNameCN.HeaderText = "DNameCN";
             this.DNameCN.MinimumWidth = 6;
             this.DNameCN.Name = "DNameCN";
-            this.DNameCN.Width = 125;
+            this.DNameCN.Width = 103;
             // 
             // dTypeDataGridViewTextBoxColumn
             // 
+            this.dTypeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dTypeDataGridViewTextBoxColumn.DataPropertyName = "DType";
             this.dTypeDataGridViewTextBoxColumn.HeaderText = "DType";
             this.dTypeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dTypeDataGridViewTextBoxColumn.Name = "dTypeDataGridViewTextBoxColumn";
-            this.dTypeDataGridViewTextBoxColumn.Width = 125;
+            this.dTypeDataGridViewTextBoxColumn.Width = 79;
             // 
             // dAreaDataGridViewTextBoxColumn
             // 
+            this.dAreaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dAreaDataGridViewTextBoxColumn.DataPropertyName = "DArea";
             this.dAreaDataGridViewTextBoxColumn.HeaderText = "DArea";
             this.dAreaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dAreaDataGridViewTextBoxColumn.Name = "dAreaDataGridViewTextBoxColumn";
-            this.dAreaDataGridViewTextBoxColumn.Width = 125;
+            this.dAreaDataGridViewTextBoxColumn.Width = 77;
             // 
             // dModelDataGridViewTextBoxColumn
             // 
+            this.dModelDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dModelDataGridViewTextBoxColumn.DataPropertyName = "DModel";
             this.dModelDataGridViewTextBoxColumn.HeaderText = "DModel";
             this.dModelDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dModelDataGridViewTextBoxColumn.Name = "dModelDataGridViewTextBoxColumn";
-            this.dModelDataGridViewTextBoxColumn.Width = 125;
+            this.dModelDataGridViewTextBoxColumn.Width = 85;
             // 
             // DKKS
             // 
@@ -340,13 +355,13 @@ namespace DeviceApp
             // 
             this.pnlDevicePage.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.pnlDevicePage.Controls.Add(this.label1);
-            this.pnlDevicePage.Controls.Add(this.cmbNums);
+            this.pnlDevicePage.Controls.Add(this.cmbQty);
             this.pnlDevicePage.Controls.Add(this.btnLast);
             this.pnlDevicePage.Controls.Add(this.btnNext);
             this.pnlDevicePage.Controls.Add(this.btnGo);
             this.pnlDevicePage.Controls.Add(this.btnPre);
             this.pnlDevicePage.Controls.Add(this.btnFirst);
-            this.pnlDevicePage.Controls.Add(this.txtPage);
+            this.pnlDevicePage.Controls.Add(this.txtCurrentPage);
             this.pnlDevicePage.Controls.Add(this.lblPages);
             this.pnlDevicePage.Controls.Add(this.label3);
             this.pnlDevicePage.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -358,93 +373,121 @@ namespace DeviceApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(89, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
+            this.label1.Size = new System.Drawing.Size(67, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "Per page";
             // 
-            // cmbNums
+            // cmbQty
             // 
-            this.cmbNums.FormattingEnabled = true;
-            this.cmbNums.Location = new System.Drawing.Point(3, 5);
-            this.cmbNums.Name = "cmbNums";
-            this.cmbNums.Size = new System.Drawing.Size(67, 24);
-            this.cmbNums.TabIndex = 3;
+            this.cmbQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbQty.FormattingEnabled = true;
+            this.cmbQty.Items.AddRange(new object[] {
+            "20",
+            "40",
+            "60",
+            "80",
+            "100",
+            "200"});
+            this.cmbQty.Location = new System.Drawing.Point(12, 5);
+            this.cmbQty.Name = "cmbQty";
+            this.cmbQty.Size = new System.Drawing.Size(67, 26);
+            this.cmbQty.TabIndex = 3;
+            this.cmbQty.Text = "20";
+            this.cmbQty.SelectedValueChanged += new System.EventHandler(this.cmbQty_SelectedValueChanged);
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(537, 6);
+            this.btnLast.AutoSize = true;
+            this.btnLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLast.Location = new System.Drawing.Point(384, 1);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(47, 23);
+            this.btnLast.Size = new System.Drawing.Size(47, 34);
             this.btnLast.TabIndex = 2;
-            this.btnLast.Text = ">>";
+            this.btnLast.Text = ">>|";
             this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(482, 6);
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(319, 2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(47, 23);
+            this.btnNext.Size = new System.Drawing.Size(47, 32);
             this.btnNext.TabIndex = 2;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(427, 6);
+            this.btnGo.AutoSize = true;
+            this.btnGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGo.Location = new System.Drawing.Point(595, 1);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(47, 23);
+            this.btnGo.Size = new System.Drawing.Size(47, 34);
             this.btnGo.TabIndex = 2;
             this.btnGo.Text = "Go";
             this.btnGo.UseVisualStyleBackColor = true;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
             // btnPre
             // 
-            this.btnPre.Location = new System.Drawing.Point(263, 6);
+            this.btnPre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPre.Location = new System.Drawing.Point(263, 4);
             this.btnPre.Name = "btnPre";
-            this.btnPre.Size = new System.Drawing.Size(47, 23);
+            this.btnPre.Size = new System.Drawing.Size(47, 29);
             this.btnPre.TabIndex = 2;
             this.btnPre.Text = "<";
             this.btnPre.UseVisualStyleBackColor = true;
+            this.btnPre.Click += new System.EventHandler(this.btnPre_Click);
             // 
             // btnFirst
             // 
-            this.btnFirst.Location = new System.Drawing.Point(208, 6);
+            this.btnFirst.AutoSize = true;
+            this.btnFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirst.Location = new System.Drawing.Point(208, 1);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(47, 23);
+            this.btnFirst.Size = new System.Drawing.Size(47, 34);
             this.btnFirst.TabIndex = 2;
-            this.btnFirst.Text = "<<";
+            this.btnFirst.Text = "|<<";
             this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
-            // txtPage
+            // txtCurrentPage
             // 
-            this.txtPage.Location = new System.Drawing.Point(318, 6);
-            this.txtPage.Name = "txtPage";
-            this.txtPage.Size = new System.Drawing.Size(57, 22);
-            this.txtPage.TabIndex = 1;
+            this.txtCurrentPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCurrentPage.Location = new System.Drawing.Point(475, 6);
+            this.txtCurrentPage.Name = "txtCurrentPage";
+            this.txtCurrentPage.Size = new System.Drawing.Size(57, 24);
+            this.txtCurrentPage.TabIndex = 1;
             // 
             // lblPages
             // 
             this.lblPages.AutoSize = true;
-            this.lblPages.Location = new System.Drawing.Point(403, 9);
+            this.lblPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPages.Location = new System.Drawing.Point(560, 9);
             this.lblPages.Name = "lblPages";
-            this.lblPages.Size = new System.Drawing.Size(16, 17);
+            this.lblPages.Size = new System.Drawing.Size(16, 18);
             this.lblPages.TabIndex = 0;
             this.lblPages.Text = "?";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(383, 9);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(540, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(12, 17);
+            this.label3.Size = new System.Drawing.Size(12, 18);
             this.label3.TabIndex = 0;
             this.label3.Text = "/";
             // 
             // pnlDeviceList
             // 
             this.pnlDeviceList.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnlDeviceList.Controls.Add(this.chkMulti);
             this.pnlDeviceList.Controls.Add(this.btnDeviceDel);
             this.pnlDeviceList.Controls.Add(this.btnDeviceImport);
             this.pnlDeviceList.Controls.Add(this.btnDeviceEXport);
@@ -455,6 +498,17 @@ namespace DeviceApp
             this.pnlDeviceList.Name = "pnlDeviceList";
             this.pnlDeviceList.Size = new System.Drawing.Size(1413, 34);
             this.pnlDeviceList.TabIndex = 1;
+            // 
+            // chkMulti
+            // 
+            this.chkMulti.AutoSize = true;
+            this.chkMulti.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.chkMulti.Location = new System.Drawing.Point(376, 8);
+            this.chkMulti.Name = "chkMulti";
+            this.chkMulti.Size = new System.Drawing.Size(83, 21);
+            this.chkMulti.TabIndex = 1;
+            this.chkMulti.Text = "MultiEdit";
+            this.chkMulti.UseVisualStyleBackColor = true;
             // 
             // btnDeviceDel
             // 
@@ -513,7 +567,7 @@ namespace DeviceApp
             // pnlSearch
             // 
             this.pnlSearch.Controls.Add(this.label2);
-            this.pnlSearch.Controls.Add(this.comboBox1);
+            this.pnlSearch.Controls.Add(this.cmbDept);
             this.pnlSearch.Controls.Add(this.cmbStatus);
             this.pnlSearch.Controls.Add(this.lblModel);
             this.pnlSearch.Controls.Add(this.lblArea);
@@ -542,15 +596,15 @@ namespace DeviceApp
             this.label2.TabIndex = 22;
             this.label2.Text = "Dept.";
             // 
-            // comboBox1
+            // cmbDept
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cmbDept.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(51, 9);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(137, 24);
-            this.comboBox1.TabIndex = 23;
+            this.cmbDept.FormattingEnabled = true;
+            this.cmbDept.Location = new System.Drawing.Point(51, 9);
+            this.cmbDept.Name = "cmbDept";
+            this.cmbDept.Size = new System.Drawing.Size(137, 24);
+            this.cmbDept.TabIndex = 23;
             // 
             // cmbStatus
             // 
@@ -1455,6 +1509,7 @@ namespace DeviceApp
             this.pnlDevicePage.ResumeLayout(false);
             this.pnlDevicePage.PerformLayout();
             this.pnlDeviceList.ResumeLayout(false);
+            this.pnlDeviceList.PerformLayout();
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -1592,6 +1647,20 @@ namespace DeviceApp
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnMaiteListDel;
         private System.Windows.Forms.BindingSource deviceBindingSource;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbQty;
+        private System.Windows.Forms.Button btnLast;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnGo;
+        private System.Windows.Forms.Button btnPre;
+        private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.TextBox txtCurrentPage;
+        private System.Windows.Forms.Label lblPages;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbDept;
+        private System.Windows.Forms.CheckBox chkMulti;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Select;
         private System.Windows.Forms.DataGridViewTextBoxColumn DId;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNameEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNameCN;
@@ -1604,17 +1673,5 @@ namespace DeviceApp
         private System.Windows.Forms.DataGridViewTextBoxColumn manufacturerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn providerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DRemark;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbNums;
-        private System.Windows.Forms.Button btnLast;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button btnGo;
-        private System.Windows.Forms.Button btnPre;
-        private System.Windows.Forms.Button btnFirst;
-        private System.Windows.Forms.TextBox txtPage;
-        private System.Windows.Forms.Label lblPages;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

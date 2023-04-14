@@ -8,7 +8,7 @@ namespace DAL
 {
     public interface IModel<T> where T: class
     {
-        List<T> GetAll();
+        List<T> GetAll(string[] filter);
         List<T> GetDataByFilter<M>(M filter);
         int Insert(T obj);
         int Update(T obj);
